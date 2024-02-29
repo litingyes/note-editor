@@ -1,0 +1,8 @@
+{
+  "name": "@node-editor/vue-kit",
+  "type": "module",
+  "version": "0.0.0",
+  "module": "../../dist/packages/vue-kit/index.esm.js",
+  "types": "../../dist/packages/vue-kit/index.esm.d.ts",
+  "dependencies": {}
+}

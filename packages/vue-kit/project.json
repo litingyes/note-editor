@@ -1,0 +1,22 @@
+{
+  "name": "vue-kit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/vue-kit/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/vue-kit",
+        "main": "packages/vue-kit/src/index.ts",
+        "tsConfig": "packages/vue-kit/tsconfig.lib.json",
+        "assets": [],
+        "project": "packages/vue-kit/package.json",
+        "compiler": "swc",
+        "format": ["cjs", "esm"]
+      }
+    }
+  },
+  "tags": []
+}
