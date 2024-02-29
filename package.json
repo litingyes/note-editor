@@ -1,15 +1,41 @@
 {
-  "name": "package-based",
-  "version": "0.0.0",
+  "name": "node-editor",
+  "type": "module",
   "license": "MIT",
-  "scripts": {},
-  "private": true,
-  "dependencies": {},
+  "scripts": {
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
   "devDependencies": {
+    "@antfu/eslint-config": "^2.6.4",
+    "@commitlint/cli": "^19.0.3",
+    "@commitlint/config-conventional": "^19.0.3",
     "@nx/js": "18.0.5",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-format": "^0.1.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "nx": "18.0.5"
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "lint-staged": {
+    "*": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/prompt"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
 }
