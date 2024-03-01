@@ -8,6 +8,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@tiptap/core": "^2.2.4",
     "vue": "^3.3.4"
   },
   "devDependencies": {

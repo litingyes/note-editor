@@ -2,10 +2,22 @@
   "name": "@node-editor/tiptap-extension-unique-id",
   "type": "module",
   "version": "0.0.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "dependencies": {},
+  "peerDependencies": {
+    "@tiptap/core": "^2.2"
+  },
+  "dependencies": {
+    "nanoid": "^5.0.6"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
