@@ -1,0 +1,13 @@
+{
+  "name": "@node-editor/tiptap-extension-unique-id",
+  "type": "module",
+  "version": "0.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

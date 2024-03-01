@@ -10,6 +10,9 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
+      "tiptap-extension-unique-id": [
+        "packages/tiptap-extension-unique-id/src/index.ts"
+      ],
       "vue-kit": ["packages/vue-kit/src/index.ts"],
       "vue-play": ["packages/vue-play/src/index.ts"]
     },
