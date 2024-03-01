@@ -25,7 +25,7 @@ export default defineConfig({
   // },
 
   build: {
-    outDir: '../../dist/packages/vue-play',
+    outDir: 'dist',
     reportCompressedSize: true,
     commonjsOptions: {
       transformMixedEsModules: true,

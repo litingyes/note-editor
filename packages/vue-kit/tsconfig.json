@@ -1,13 +1,15 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "module": "commonjs",
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "allowJs": true,
     "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "forceConsistentCasingInFileNames": true
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": false,
+    "verbatimModuleSyntax": true
   },
   "references": [
     {
