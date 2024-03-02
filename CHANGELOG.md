@@ -1,3 +1,14 @@
+## 0.0.1-3 (2024-03-02)
+
+
+### 🩹 Fixes
+
+- dependencies ([7e32e0a](https://github.com/liting-yes/note-editor/commit/7e32e0a))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.0.1-2 (2024-03-02)
 
 
