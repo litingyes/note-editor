@@ -10,7 +10,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "tiptap-extension-bar": ["packages/tiptap-extension-bar/src/index.ts"],
       "tiptap-extension-unique-id": [
         "packages/tiptap-extension-unique-id/src/index.ts"
       ],
