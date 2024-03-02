@@ -4,6 +4,7 @@
   "version": "0.0.1-1",
   "description": "unique id extension for tiptap",
   "license": "MIT",
+  "homepage": "https://note-editor.liting.ink/",
   "repository": {
     "type": "git",
     "url": "https://github.com/liting-yes/note-editor.git",
