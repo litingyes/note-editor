@@ -1,4 +1,5 @@
 import { onBeforeUnmount, onMounted, shallowRef } from 'vue'
+import type { EditorOptions } from '@tiptap/vue-3'
 import { Editor } from '@tiptap/vue-3'
 import type { SetupKitOptions } from '../setupKit'
 import { setupKit } from '../setupKit'
@@ -7,15 +8,14 @@ export interface UseNoteEditorOptions {
   kitOptions: SetupKitOptions
 }
 
-export function useNoteEditor(options?: Partial<UseNoteEditorOptions>) {
+export function useNoteEditor(editorOptions?: Partial<EditorOptions>, kitOptions?: Partial<SetupKitOptions>) {
   const editor = shallowRef<Editor>()
 
   onMounted(() => {
     editor.value = new Editor({
       content: 'Note editor',
-      extensions: [
-        options?.kitOptions ? setupKit.configure(options?.kitOptions) : setupKit,
-      ],
+      ...editorOptions,
+      extensions: [...(editorOptions?.extensions ?? []), kitOptions ? setupKit.configure(kitOptions) : setupKit],
     })
   })
   onBeforeUnmount(() => {
