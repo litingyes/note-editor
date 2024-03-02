@@ -23,6 +23,7 @@ import { Editor } from '@tiptap/core'
 import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
 
 const editor = new Editor({
+  content: '<p>@note-editor/tiptap-extension-unique-id</p>',
   extensions: [
     uniqueId
   ]

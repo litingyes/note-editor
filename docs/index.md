@@ -6,6 +6,9 @@ hero:
   text: Tiptap-based text editor
   actions:
     - theme: brand
+      text: Guide
+      link: /guide/vue
+    - theme: alt
       text: Extensions
       link: /extensions/unique-id
 

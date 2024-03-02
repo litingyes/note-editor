@@ -29,9 +29,16 @@ export default defineConfig({
       lang: 'en-US',
       themeConfig: {
         nav: [
+          { text: 'Guide', link: '/guide/vue' },
           { text: 'Extensions', link: '/extensions/unique-id' },
         ],
         sidebar: [
+          {
+            text: 'Guide',
+            items: [
+              { text: 'Vue', link: '/guide/vue' },
+            ],
+          },
           {
             text: 'Extensions',
             items: [
@@ -46,9 +53,16 @@ export default defineConfig({
       lang: 'zh-CN',
       themeConfig: {
         nav: [
+          { text: '指南', link: '/zh-CN/guide/vue' },
           { text: '插件', link: '/zh-CN/extensions/unique-id' },
         ],
         sidebar: [
+          {
+            text: '指南',
+            items: [
+              { text: 'Vue', link: '/zh-CN/guide/vue' },
+            ],
+          },
           {
             text: '插件',
             items: [
