@@ -1,4 +1,4 @@
-# @node-editor/tiptap-extension-unique-id
+# @note-editor/tiptap-extension-unique-id
 
 用于 Tiptap 的注入唯一 ID 的插件
 
@@ -7,11 +7,11 @@
 ::: code-group
 
 ```bash [npm]
-npm install @node-editor/tiptap-extension-unique-id
+npm install @note-editor/tiptap-extension-unique-id
 ```
 
 ```bash [pnpm]
-pnpm add @node-editor/tiptap-extension-unique-id
+pnpm add @note-editor/tiptap-extension-unique-id
 ```
 
 :::
@@ -20,7 +20,7 @@ pnpm add @node-editor/tiptap-extension-unique-id
 
 ```ts
 import { Editor } from '@tiptap/core'
-import { uniqueId } from '@node-editor/tiptap-extension-unique-id'
+import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
 
 const editor = new Editor({
   extensions: [
