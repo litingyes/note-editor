@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import StarterKit from '@tiptap/starter-kit'
-import { uniqueId } from '@node-editor/tiptap-extension-unique-id'
+import SetupKit from '@note-editor/vue-kit'
+import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
 import { onBeforeUnmount, onMounted, shallowRef } from 'vue'
 
 const editor = shallowRef<Editor>()
@@ -10,6 +11,7 @@ onMounted(() => {
     content: 'Node Editor',
     extensions: [
       StarterKit,
+      SetupKit,
       uniqueId,
     ],
   })

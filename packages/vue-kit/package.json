@@ -1,8 +1,20 @@
 {
-  "name": "@node-editor/vue-kit",
+  "name": "@note-editor/vue-kit",
   "type": "module",
   "version": "0.0.1-1",
   "private": false,
+  "description": "starter kit for tiptap in vue",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liting-yes/note-editor.git",
+    "directory": "packages/vue-kit"
+  },
+  "keywords": [
+    "tiptap",
+    "tiptap starter kit",
+    "vue"
+  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -13,6 +25,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

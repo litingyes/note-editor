@@ -1,5 +1,5 @@
 {
-  "name": "@node-editor/vue-play",
+  "name": "@note-editor/vue-play",
   "dependencies": {
     "@tiptap/starter-kit": "^2.2.4",
     "@tiptap/vue-3": "^2.2.4"
