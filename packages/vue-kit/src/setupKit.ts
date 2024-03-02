@@ -97,7 +97,7 @@ export interface SetupKitOptions {
   tableRow: Partial<TableRowOptions> | false
   taskItem: Partial<TaskItemOptions> | false
   taskList: Partial<TaskListOptions> | false
-  Text: false
+  text: false
   textStyle: Partial<TextStyleOptions> | false
   typography: Partial<TypographyOptions> | false
   underline: Partial<UnderlineOptions> | false
@@ -198,7 +198,7 @@ export const setupKit = Extension.create<SetupKitOptions>({
     if (this.options.taskList !== false)
       extensions.push(TaskList.configure(this.options.taskList))
 
-    if (this.options.Text !== false)
+    if (this.options.text !== false)
       extensions.push(Text)
 
     if (this.options.textStyle !== false)
