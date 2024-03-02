@@ -15,6 +15,8 @@ import { Color } from '@tiptap/extension-color'
 import Document from '@tiptap/extension-document'
 import type { DropcursorOptions } from '@tiptap/extension-dropcursor'
 import { Dropcursor } from '@tiptap/extension-dropcursor'
+import type { FocusOptions } from '@tiptap/extension-focus'
+import { FocusClasses } from '@tiptap/extension-focus'
 import type { FontFamilyOptions } from '@tiptap/extension-font-family'
 import { FontFamily } from '@tiptap/extension-font-family'
 import Gapcursor from '@tiptap/extension-gapcursor'
@@ -61,6 +63,8 @@ import type { TextStyleOptions } from '@tiptap/extension-text-style'
 import { TextStyle } from '@tiptap/extension-text-style'
 import type { TypographyOptions } from '@tiptap/extension-typography'
 import { Typography } from '@tiptap/extension-typography'
+import type { UnderlineOptions } from '@tiptap/extension-underline'
+import { Underline } from '@tiptap/extension-underline'
 
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
@@ -71,6 +75,7 @@ export interface SetupKitOptions {
   color: Partial<ColorOptions> | false
   document: false
   dropcursor: Partial<DropcursorOptions> | false
+  focus: Partial<FocusOptions> | false
   fontFamily: Partial<FontFamilyOptions> | false
   gapcursor: false
   hardBreak: Partial<HardBreakOptions> | false
@@ -95,6 +100,7 @@ export interface SetupKitOptions {
   Text: false
   textStyle: Partial<TextStyleOptions> | false
   typography: Partial<TypographyOptions> | false
+  underline: Partial<UnderlineOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -104,68 +110,105 @@ export const setupKit = Extension.create<SetupKitOptions>({
 
     if (this.options.blockquote !== false)
       extensions.push(Blockquote.configure(this.options.blockquote))
+
     if (this.options.bold !== false)
       extensions.push(Bold.configure(this.options.bold))
+
     if (this.options.bulletList !== false)
       extensions.push(BulletList.configure(this.options.bulletList))
+
     if (this.options.characterCount !== false)
       extensions.push(CharacterCount.configure(this.options.characterCount))
+
     if (this.options.code !== false)
       extensions.push(Code.configure(this.options.code))
+
     if (this.options.color !== false)
       extensions.push(Color.configure(this.options.color))
+
     if (this.options.document !== false)
       extensions.push(Document)
+
     if (this.options.dropcursor !== false)
       extensions.push(Dropcursor.configure(this.options.dropcursor))
+
+    if (this.options.focus !== false)
+      extensions.push(FocusClasses.configure(this.options.focus))
+
     if (this.options.fontFamily !== false)
       extensions.push(FontFamily.configure(this.options.fontFamily))
+
     if (this.options.gapcursor !== false)
       extensions.push(Gapcursor)
+
     if (this.options.hardBreak !== false)
       extensions.push(HardBreak.configure(this.options.hardBreak))
+
     if (this.options.heading !== false)
       extensions.push(Heading.configure(this.options.heading))
+
     if (this.options.highlight !== false)
       extensions.push(Highlight.configure(this.options.highlight))
+
     if (this.options.history !== false)
       extensions.push(History.configure(this.options.history))
+
     if (this.options.horizontalRule !== false)
       extensions.push(HorizontalRule.configure(this.options.horizontalRule))
+
     if (this.options.italic !== false)
       extensions.push(Italic.configure(this.options.italic))
+
     if (this.options.listItem !== false)
       extensions.push(ListItem.configure(this.options.listItem))
+
     if (this.options.orderedList !== false)
       extensions.push(OrderedList.configure(this.options.orderedList))
+
     if (this.options.paragraph !== false)
       extensions.push(Paragraph.configure(this.options.paragraph))
+
     if (this.options.placeholder !== false)
       extensions.push(Placeholder.configure(this.options.placeholder))
+
     if (this.options.strike !== false)
       extensions.push(Strike.configure(this.options.strike))
+
     if (this.options.subscript !== false)
       extensions.push(Subscript.configure(this.options.subscript))
+
     if (this.options.superscript !== false)
       extensions.push(Superscript.configure(this.options.superscript))
+
     if (this.options.table !== false)
       extensions.push(Table.configure(this.options.table))
+
     if (this.options.tableCell !== false)
       extensions.push(TableCell.configure(this.options.tableCell))
+
     if (this.options.tableHeader !== false)
       extensions.push(TableHeader.configure(this.options.tableHeader))
+
     if (this.options.tableRow !== false)
       extensions.push(TableRow.configure(this.options.tableRow))
     if (this.options.taskItem !== false)
+
       extensions.push(TaskItem.configure(this.options.taskItem))
+
     if (this.options.taskList !== false)
       extensions.push(TaskList.configure(this.options.taskList))
+
     if (this.options.Text !== false)
       extensions.push(Text)
+
     if (this.options.textStyle !== false)
       extensions.push(TextStyle.configure(this.options.textStyle))
+
     if (this.options.typography !== false)
       extensions.push(Typography.configure(this.options.typography))
+
+    if (this.options.underline !== false)
+      extensions.push(Underline.configure(this.options.underline))
 
     return extensions
   },
