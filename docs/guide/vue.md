@@ -1,6 +1,6 @@
 # Starter for Vue
 
-The **VueKit** is a collection of [Tiptap](https://tiptap.dev/docs/editor/introduction) extensions. If you’re just getting started, this extension is for you.
+The **VueKit** is a collection of [Tiptap](https://tiptap.dev/docs/editor/introduction) extensions with vue. If you’re just getting started, this extension is for you.
 
 ## Installation
 
@@ -15,6 +15,72 @@ pnpm add @tiptap/vue-3 @note-editor/vue-kit
 ```
 
 :::
+
+## Export
+
+### setupKit
+
+a collection of Tiptap extensions, similar to [StarterKit](https://tiptap.dev/docs/editor/api/extensions/starter-kit)
+
+```ts
+import { Editor } from '@tiptap/core'
+import { setupKit } from '@note-editor/vue-kit'
+
+const editor = new Editor({
+  extensions: [
+    setupKit
+  ]
+})
+```
+
+### useNoteEditor
+
+a vue composable for tiptap
+
+```ts
+import { useNoteEditor } from '@note-editor/vue-kit'
+```
+
+## Usage
+
+```vue
+<script setup lang="ts">
+import { EditorContent } from '@tiptap/vue-3'
+import { useNoteEditor } from '@note-editor/vue-kit'
+
+const { editor } = useNoteEditor()
+</script>
+
+<template>
+  <EditorContent :editor="editor" />
+</template>
+```
+
+You can configure the included extensions, or even disable a few of them, like shown below.
+
+```vue
+<script setup lang="ts">
+import { EditorContent } from '@tiptap/vue-3'
+import { useNoteEditor } from '@note-editor/vue-kit'
+
+const { editor } = useNoteEditor({
+  // Equivalent to setupKit
+  kitOptions: {
+    // Configure an included extension
+    heading: {
+      levels: [1, 2],
+    },
+
+    // Disable an included extension
+    history: false,
+  }
+})
+</script>
+
+<template>
+  <EditorContent :editor="editor" />
+</template>
+```
 
 ## Included extensions
 
@@ -61,39 +127,3 @@ pnpm add @tiptap/vue-3 @note-editor/vue-kit
 - [Placeholder](https://tiptap.dev/docs/editor/api/extensions/placeholder)
 - [TextAlign](https://tiptap.dev/docs/editor/api/extensions/text-align)
 - [Typography](https://tiptap.dev/docs/editor/api/extensions/typography)
-
-## Usage
-
-```ts
-import { Editor } from '@tiptap/core'
-import SetupKit from '@note-editor/vue-kit'
-
-const editor = new Editor({
-  content: '<p>@note-editor/vue-kit</p>',
-  extensions: [
-    SetupKit
-  ]
-})
-```
-
-You can configure the included extensions, or even disable a few of them, like shown below.
-
-```ts
-import { Editor } from '@tiptap/core'
-import SetupKit from '@note-editor/vue-kit'
-
-const editor = new Editor({
-  content: '<p>@note-editor/vue-kit</p>',
-  extensions: [
-    SetupKit.configure({
-      // Configure an included extension
-      heading: {
-        levels: [1, 2],
-      },
-
-      // Disable an included extension
-      history: false,
-    })
-  ]
-})
-```

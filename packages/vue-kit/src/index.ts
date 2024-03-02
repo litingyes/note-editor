@@ -1,5 +1,2 @@
-import { setupKit } from './setupKit'
-
 export * from './setupKit'
-
-export default setupKit
+export * from './composables/useNoteEditor'

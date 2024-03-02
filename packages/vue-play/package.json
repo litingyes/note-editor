@@ -2,6 +2,7 @@
   "name": "@note-editor/vue-play",
   "dependencies": {
     "@tiptap/starter-kit": "^2.2.4",
-    "@tiptap/vue-3": "^2.2.4"
+    "@tiptap/vue-3": "^2.2.4",
+    "vue": "^3.4.21"
   }
 }

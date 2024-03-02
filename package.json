@@ -11,8 +11,7 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "@tiptap/core": "^2.2.4",
-    "vue": "^3.3.4"
+    "@tiptap/core": "^2.2.4"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",

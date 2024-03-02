@@ -1,24 +1,8 @@
 <script setup lang="ts">
-import { Editor, EditorContent } from '@tiptap/vue-3'
-import StarterKit from '@tiptap/starter-kit'
-import SetupKit from '@note-editor/vue-kit'
-import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
-import { onBeforeUnmount, onMounted, shallowRef } from 'vue'
+import { EditorContent } from '@tiptap/vue-3'
+import { useNoteEditor } from '@note-editor/vue-kit'
 
-const editor = shallowRef<Editor>()
-onMounted(() => {
-  editor.value = new Editor({
-    content: 'Node Editor',
-    extensions: [
-      StarterKit,
-      SetupKit,
-      uniqueId,
-    ],
-  })
-})
-onBeforeUnmount(() => {
-  editor.value?.destroy()
-})
+const { editor } = useNoteEditor()
 </script>
 
 <template>

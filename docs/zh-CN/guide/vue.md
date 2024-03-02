@@ -16,6 +16,31 @@ pnpm add @tiptap/vue-3 @note-editor/vue-kit
 
 :::
 
+## 导出
+
+### setupKit
+
+一个 Tiptap 插件集，类似于 [StarterKit](https://tiptap.dev/docs/editor/api/extensions/starter-kit)
+
+```ts
+import { Editor } from '@tiptap/core'
+import { setupKit } from '@note-editor/vue-kit'
+
+const editor = new Editor({
+  extensions: [
+    setupKit
+  ]
+})
+```
+
+### useNoteEditor
+
+一个用于 Tiptap 的 Vue 组合式函数
+
+```ts
+import { useNoteEditor } from '@note-editor/vue-kit'
+```
+
 ## 涵盖的插件列表
 
 ### Nodes
