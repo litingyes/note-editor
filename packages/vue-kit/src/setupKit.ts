@@ -66,6 +66,9 @@ import { Typography } from '@tiptap/extension-typography'
 import type { UnderlineOptions } from '@tiptap/extension-underline'
 import { Underline } from '@tiptap/extension-underline'
 
+import type { UniqueIdOptions } from '@note-editor/tiptap-extension-unique-id'
+import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
+
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
   bold: Partial<BoldOptions> | false
@@ -101,6 +104,7 @@ export interface SetupKitOptions {
   textStyle: Partial<TextStyleOptions> | false
   typography: Partial<TypographyOptions> | false
   underline: Partial<UnderlineOptions> | false
+  uniqueId: Partial<UniqueIdOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -209,6 +213,9 @@ export const setupKit = Extension.create<SetupKitOptions>({
 
     if (this.options.underline !== false)
       extensions.push(Underline.configure(this.options.underline))
+
+    if (this.options.uniqueId !== false)
+      extensions.push(uniqueId.configure(this.options.uniqueId))
 
     return extensions
   },

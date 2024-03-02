@@ -38,6 +38,7 @@
     "vue": "^3"
   },
   "dependencies": {
+    "@note-editor/tiptap-extension-unique-id": "*",
     "@tiptap/extension-blockquote": "^2.2.4",
     "@tiptap/extension-bold": "^2.2.4",
     "@tiptap/extension-bullet-list": "^2.2.4",

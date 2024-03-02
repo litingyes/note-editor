@@ -41,6 +41,47 @@ const editor = new Editor({
 import { useNoteEditor } from '@note-editor/vue-kit'
 ```
 
+## 用法
+
+```vue
+<script setup lang="ts">
+import { EditorContent } from '@tiptap/vue-3'
+import { useNoteEditor } from '@note-editor/vue-kit'
+
+const { editor } = useNoteEditor()
+</script>
+
+<template>
+  <EditorContent :editor="editor" />
+</template>
+```
+
+对于涵盖的插件，你既可以设置其配置项，也可以禁用它。示例如下：
+
+```vue
+<script setup lang="ts">
+import { EditorContent } from '@tiptap/vue-3'
+import { useNoteEditor } from '@note-editor/vue-kit'
+
+const { editor } = useNoteEditor({
+  // 等同于 setupKit 的配置项
+  kitOptions: {
+    // 配置插件
+    heading: {
+      levels: [1, 2],
+    },
+
+    // 禁用插件
+    history: false,
+  }
+})
+</script>
+
+<template>
+  <EditorContent :editor="editor" />
+</template>
+```
+
 ## 涵盖的插件列表
 
 ### Nodes
@@ -86,39 +127,4 @@ import { useNoteEditor } from '@note-editor/vue-kit'
 - [Placeholder](https://tiptap.dev/docs/editor/api/extensions/placeholder)
 - [TextAlign](https://tiptap.dev/docs/editor/api/extensions/text-align)
 - [Typography](https://tiptap.dev/docs/editor/api/extensions/typography)
-
-## 用法
-
-```ts
-import { Editor } from '@tiptap/core'
-import SetupKit from '@note-editor/vue-kit'
-
-const editor = new Editor({
-  content: '<p>@note-editor/vue-kit</p>',
-  extensions: [
-    SetupKit
-  ]
-})
-```
-
-对于涵盖的插件，你既可以设置其配置项，也可以禁用它。示例如下：
-
-```ts
-import { Editor } from '@tiptap/core'
-import SetupKit from '@note-editor/vue-kit'
-
-const editor = new Editor({
-  content: '<p>@note-editor/vue-kit</p>',
-  extensions: [
-    SetupKit.configure({
-      // Configure an included extension
-      heading: {
-        levels: [1, 2],
-      },
-
-      // Disable an included extension
-      history: false,
-    })
-  ]
-})
-```
+- [Unique ID](/zh-CN/extensions/unique-id)

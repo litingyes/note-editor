@@ -64,7 +64,7 @@ import { EditorContent } from '@tiptap/vue-3'
 import { useNoteEditor } from '@note-editor/vue-kit'
 
 const { editor } = useNoteEditor({
-  // Equivalent to setupKit
+  // Configuration items equivalent to setupKit
   kitOptions: {
     // Configure an included extension
     heading: {
@@ -127,3 +127,4 @@ const { editor } = useNoteEditor({
 - [Placeholder](https://tiptap.dev/docs/editor/api/extensions/placeholder)
 - [TextAlign](https://tiptap.dev/docs/editor/api/extensions/text-align)
 - [Typography](https://tiptap.dev/docs/editor/api/extensions/typography)
+- [Unique ID](/extensions/unique-id)
