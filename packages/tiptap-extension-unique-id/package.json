@@ -1,5 +1,5 @@
 {
-  "name": "@node-editor/tiptap-extension-unique-id",
+  "name": "@note-editor/tiptap-extension-unique-id",
   "type": "module",
   "version": "0.0.1-1",
   "description": "unique id extension for tiptap",
