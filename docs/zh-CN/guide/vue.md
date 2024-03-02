@@ -106,7 +106,6 @@ const { editor } = useNoteEditor({
 ### Marks
 
 - [Bold](https://tiptap.dev/docs/editor/api/marks/bold)
-
 - [Code](https://tiptap.dev/docs/editor/api/marks/code)
 - [Highlight](https://tiptap.dev/docs/editor/api/marks/highlight)
 - [Italic](https://tiptap.dev/docs/editor/api/marks/italic)
