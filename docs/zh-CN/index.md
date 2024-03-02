@@ -6,14 +6,15 @@ hero:
   text: 基于 Tiptap 的文本编辑器
   actions:
     - theme: brand
+      text: 指南
+      link: /zh-CN/guide/vue
+    - theme: alt
       text: 插件
       link: /zh-CN/extensions/unique-id
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: 集成简单
+    details: 保姆式教程 + 完整的封装链
+  - title: 易于自定义
+    details: 基于 Tiptap 封装，拓展难度低
 ---

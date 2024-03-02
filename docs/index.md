@@ -13,10 +13,8 @@ hero:
       link: /extensions/unique-id
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Easy to integrate
+    details: Nanny tutorial + Complete packaging chain
+  - title: Easy to customize
+    details: Based on Tiptap packaging, easy to expand
 ---
