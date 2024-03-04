@@ -8,7 +8,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: 'npm',
-        link: 'https://www.npmjs.com/settings/node-editor/packages',
+        link: 'https://www.npmjs.com/settings/note-editor/packages',
       },
       {
         icon: 'github',
