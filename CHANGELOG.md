@@ -1,3 +1,18 @@
+## 0.0.1-6 (2024-03-04)
+
+
+### 🚀 Features
+
+- **vue-kit:** support pass editorOptions in useNoteEditor ([f06c5ff](https://github.com/liting-yes/note-editor/commit/f06c5ff))
+
+### 🩹 Fixes
+
+- **tiptap-extension-unique-id:** generate id error ([94ec0b8](https://github.com/liting-yes/note-editor/commit/94ec0b8))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.0.1-4 (2024-03-02)
 
 
