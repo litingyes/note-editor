@@ -32,7 +32,6 @@
     "@tiptap/pm": "^2.2"
   },
   "dependencies": {
-    "@tiptap/pm": "^2.2.4",
     "nanoid": "^5.0.6"
   },
   "publishConfig": {

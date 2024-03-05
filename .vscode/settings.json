@@ -35,5 +35,6 @@
     "blockquote",
     "dropcursor",
     "Gapcursor"
-  ]
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

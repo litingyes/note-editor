@@ -35,11 +35,11 @@
     "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
-    "@tiptap/vue-3": "^2.2",
     "vue": "^3"
   },
   "dependencies": {
-    "@note-editor/tiptap-extension-unique-id": "*",
+    "@note-editor/tiptap-extension-unique-id": "workspace:*",
+    "@tiptap/core": "^2.2.4",
     "@tiptap/extension-blockquote": "^2.2.4",
     "@tiptap/extension-bold": "^2.2.4",
     "@tiptap/extension-bullet-list": "^2.2.4",
@@ -73,10 +73,10 @@
     "@tiptap/extension-text": "^2.2.4",
     "@tiptap/extension-text-style": "^2.2.4",
     "@tiptap/extension-typography": "^2.2.4",
-    "@tiptap/extension-underline": "^2.2.4"
+    "@tiptap/extension-underline": "^2.2.4",
+    "@tiptap/vue-3": "^2.2.4"
   },
   "devDependencies": {
-    "@tiptap/vue-3": "^2.2.4",
     "vue": "^3.4.21"
   }
 }
