@@ -31,6 +31,7 @@ export default defineConfig({
         nav: [
           { text: 'Guide', link: '/guide/vue' },
           { text: 'Extensions', link: '/extensions/unique-id' },
+          { text: 'Playground', link: '/playground' },
         ],
         sidebar: [
           {
@@ -55,6 +56,7 @@ export default defineConfig({
         nav: [
           { text: '指南', link: '/zh-CN/guide/vue' },
           { text: '插件', link: '/zh-CN/extensions/unique-id' },
+          { text: '演练场', link: '/zh-CN/playground' },
         ],
         sidebar: [
           {
