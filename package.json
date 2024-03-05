@@ -1,6 +1,7 @@
 {
   "name": "note-editor",
   "type": "module",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "prepare": "husky",
