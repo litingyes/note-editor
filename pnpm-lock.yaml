@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@note-editor/vue-kit':
+        specifier: workspace:*
+        version: link:packages/vue-kit
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.6.4

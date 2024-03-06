@@ -1,6 +1,7 @@
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import NodeEditor from '../../../packages/vue-kit/src/components/NoteEditor.vue'
+import { NodeEditor } from '@note-editor/vue-kit'
+import '@note-editor/vue-kit/style.css'
 
 export default {
   extends: DefaultTheme,
