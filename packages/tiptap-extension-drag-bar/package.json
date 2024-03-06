@@ -1,7 +1,7 @@
 {
   "name": "@note-editor/tiptap-extension-drag-bar",
   "type": "module",
-  "version": "0.0.1-1",
+  "version": "0.0.1-7",
   "description": "drag bar extension for tiptap",
   "license": "MIT",
   "homepage": "https://note-editor.liting.ink/",

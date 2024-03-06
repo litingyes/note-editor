@@ -1,7 +1,7 @@
 {
   "name": "@note-editor/vue-kit",
   "type": "module",
-  "version": "0.0.1-6",
+  "version": "0.0.1-7",
   "private": false,
   "description": "starter kit for tiptap in vue",
   "license": "MIT",
@@ -38,7 +38,7 @@
     "vue": "^3"
   },
   "dependencies": {
-    "@note-editor/tiptap-extension-unique-id": "workspace:*",
+    "@note-editor/tiptap-extension-unique-id": "0.0.1-7",
     "@tiptap/core": "^2.2.4",
     "@tiptap/extension-blockquote": "^2.2.4",
     "@tiptap/extension-bold": "^2.2.4",
