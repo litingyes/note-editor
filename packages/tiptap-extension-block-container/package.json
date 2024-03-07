@@ -1,14 +1,14 @@
 {
-  "name": "@note-editor/tiptap-extension-drag-bar",
+  "name": "@note-editor/tiptap-extension-block-container",
   "type": "module",
   "version": "0.0.1-7",
-  "description": "drag bar extension for tiptap",
+  "description": "block container extension for tiptap",
   "license": "MIT",
   "homepage": "https://note-editor.liting.ink/",
   "repository": {
     "type": "git",
     "url": "https://github.com/liting-yes/note-editor.git",
-    "directory": "packages/tiptap-extension-drag-bar"
+    "directory": "packages/tiptap-extension-block-container"
   },
   "keywords": [
     "tiptap",

@@ -3,20 +3,20 @@ import { Fragment, Slice } from '@tiptap/pm/model'
 import { TextSelection } from '@tiptap/pm/state'
 import document from './extentDocument'
 
-export interface DargBarOptions {
+export interface BlockContainerOptions {
   HTMLAttributes: Record<string, any>
 }
 
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
-    dargBar: {
-      splitBragBar: (pos: number) => ReturnType
+    blockContainer: {
+      splitBlockContainer: (pos: number) => ReturnType
     }
   }
 }
 
-export const dargBar = Node.create({
-  name: 'dragBar',
+export const blockContainer = Node.create({
+  name: 'blockContainer',
   content: 'block',
   group: 'block top',
   draggable: true,
@@ -51,7 +51,7 @@ export const dargBar = Node.create({
   },
   addCommands() {
     return {
-      splitBragBar: (pos: number) => ({ state: { schema, tr }, dispatch }) => {
+      splitBlockContainer: (pos: number) => ({ state: { schema, tr }, dispatch }) => {
         const resolved = tr.doc.resolve(pos)
         const endPos = resolved.end(resolved.depth)
         const newBlockContent = tr.doc.cut(pos, endPos)
@@ -70,7 +70,7 @@ export const dargBar = Node.create({
   },
   addKeyboardShortcuts() {
     const handleEnter = () => this.editor.commands.first(({ commands, state }) => {
-      return [() => commands.splitBragBar(state.selection.from)]
+      return [() => commands.splitBlockContainer(state.selection.from)]
     })
 
     return {

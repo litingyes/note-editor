@@ -13,8 +13,8 @@
     "module": "esnext",
     "moduleResolution": "node",
     "paths": {
-      "tiptap-extension-drag-bar": [
-        "packages/tiptap-extension-drag-bar/src/index.ts"
+      "tiptap-extension-block-container": [
+        "packages/tiptap-extension-block-container/src/index.ts"
       ],
       "tiptap-extension-unique-id": [
         "packages/tiptap-extension-unique-id/src/index.ts"

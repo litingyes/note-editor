@@ -118,7 +118,7 @@ importers:
         specifier: ^1.8.8
         version: 1.8.27(typescript@5.3.3)
 
-  packages/tiptap-extension-drag-bar:
+  packages/tiptap-extension-block-container:
     devDependencies:
       '@tiptap/core':
         specifier: ^2.2.4
@@ -144,9 +144,9 @@ importers:
 
   packages/vue-kit:
     dependencies:
-      '@note-editor/tiptap-extension-drag-bar':
+      '@note-editor/tiptap-extension-block-container':
         specifier: workspace:*
-        version: link:../tiptap-extension-drag-bar
+        version: link:../tiptap-extension-block-container
       '@note-editor/tiptap-extension-unique-id':
         specifier: workspace:*
         version: link:../tiptap-extension-unique-id

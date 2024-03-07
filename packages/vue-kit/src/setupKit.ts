@@ -68,8 +68,8 @@ import { Underline } from '@tiptap/extension-underline'
 
 import type { UniqueIdOptions } from '@note-editor/tiptap-extension-unique-id'
 import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
-import type { DargBarOptions } from '@note-editor/tiptap-extension-drag-bar'
-import { dargBar } from '@note-editor/tiptap-extension-drag-bar'
+import type { BlockContainerOptions } from '@note-editor/tiptap-extension-block-container'
+import { blockContainer } from '@note-editor/tiptap-extension-block-container'
 
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
@@ -107,7 +107,7 @@ export interface SetupKitOptions {
   typography: Partial<TypographyOptions> | false
   underline: Partial<UnderlineOptions> | false
   uniqueId: Partial<UniqueIdOptions> | false
-  dragBar: Partial<DargBarOptions> | false
+  blockContainer: Partial<BlockContainerOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -133,10 +133,10 @@ export const setupKit = Extension.create<SetupKitOptions>({
     if (this.options.color !== false)
       extensions.push(Color.configure(this.options.color))
 
-    if (this.options.dragBar !== false)
-      extensions.push(dargBar)
+    if (this.options.blockContainer !== false)
+      extensions.push(blockContainer)
 
-    if (this.options.dragBar === false && this.options.document !== false)
+    if (this.options.blockContainer === false && this.options.document !== false)
       extensions.push(Document)
 
     if (this.options.dropcursor !== false)
