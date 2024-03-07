@@ -1,3 +1,14 @@
+## 0.0.1-8 (2024-03-07)
+
+
+### 🚀 Features
+
+- **dragBar:** support split by enter ([363cb91](https://github.com/liting-yes/note-editor/commit/363cb91))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.0.1-7 (2024-03-06)
 
 This was a version bump only, there were no code changes.

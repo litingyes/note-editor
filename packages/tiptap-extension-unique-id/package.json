@@ -1,7 +1,7 @@
 {
   "name": "@note-editor/tiptap-extension-unique-id",
   "type": "module",
-  "version": "0.0.1-7",
+  "version": "0.0.1-8",
   "description": "unique id extension for tiptap",
   "license": "MIT",
   "homepage": "https://note-editor.liting.ink/",
