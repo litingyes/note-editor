@@ -38,7 +38,8 @@
     "vue": "^3"
   },
   "dependencies": {
-    "@note-editor/tiptap-extension-unique-id": "0.0.1-7",
+    "@note-editor/tiptap-extension-drag-bar": "workspace:*",
+    "@note-editor/tiptap-extension-unique-id": "workspace:*",
     "@tiptap/core": "^2.2.4",
     "@tiptap/extension-blockquote": "^2.2.4",
     "@tiptap/extension-bold": "^2.2.4",

@@ -1,1 +1,1 @@
-export * from './lib/tiptap-extension-drag-bar'
+export * from './dragBar'
