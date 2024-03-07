@@ -30,7 +30,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: 'Guide', link: '/guide/vue' },
-          { text: 'Extensions', link: '/extensions/unique-id' },
+          { text: 'Extensions', link: '/extensions/block-container' },
           { text: 'Playground', link: '/playground' },
         ],
         sidebar: [
@@ -43,6 +43,7 @@ export default defineConfig({
           {
             text: 'Extensions',
             items: [
+              { text: 'Block container', link: '/extensions/block-container' },
               { text: 'Unique ID', link: '/extensions/unique-id' },
             ],
           },
@@ -55,7 +56,7 @@ export default defineConfig({
       themeConfig: {
         nav: [
           { text: '指南', link: '/zh-CN/guide/vue' },
-          { text: '插件', link: '/zh-CN/extensions/unique-id' },
+          { text: '插件', link: '/zh-CN/extensions/block-container' },
           { text: '演练场', link: '/zh-CN/playground' },
         ],
         sidebar: [
@@ -68,6 +69,7 @@ export default defineConfig({
           {
             text: '插件',
             items: [
+              { text: 'Block container (块容器)', link: '/zh-CN/extensions/block-container' },
               { text: 'Unique ID (唯一ID)', link: '/zh-CN/extensions/unique-id' },
             ],
           },
