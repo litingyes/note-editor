@@ -30,22 +30,12 @@ export const blockContainer = Node.create({
   parseHTML() {
     return [
       {
-        tag: 'div',
-        getAttrs: (el) => {
-          const dataNodeName = (el as HTMLElement).getAttribute('data-node-name')
-
-          if (dataNodeName === this.name) {
-            return {
-              'data-node-name': dataNodeName,
-            }
-          }
-          else { return false }
-        },
+        tag: 'div.note-editor__block-container',
       },
     ]
   },
   renderHTML({ HTMLAttributes }) {
-    return ['div', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes, { 'data-node-name': this.name }), 0]
+    return ['div', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0]
   },
   addExtensions() {
     return [document]

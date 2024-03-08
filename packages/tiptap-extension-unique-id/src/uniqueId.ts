@@ -7,6 +7,7 @@ export interface UniqueIdOptions {
   attributeName: string
   types: string[]
   generateID: () => string
+  injectNodeName: boolean
 }
 
 const pluginKey = new PluginKey('uniqueId')
@@ -18,6 +19,7 @@ export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
       attributeName: 'id',
       types: ['blockContainer', 'paragraph'],
       generateID: () => nanoid(),
+      injectNodeName: true,
     }
   },
   addGlobalAttributes() {
@@ -41,20 +43,42 @@ export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
           },
         },
       },
+      {
+        types: this.options.injectNodeName ? types : [],
+        attributes: {
+          'data-node-name': {
+            default: null,
+            rendered: true,
+            isRequired: true,
+            keepOnSplit: false,
+            parseHTML: element => element.getAttribute('data-node-name'),
+            renderHTML: (attributes) => {
+              return {
+                'data-node-name': attributes['data-node-name'],
+              }
+            },
+
+          },
+        },
+      },
     ]
   },
   onCreate() {
     const { tr, doc } = this.editor.state
-    const { attributeName, types, generateID } = this.options
+    const { attributeName, types, generateID, injectNodeName } = this.options
 
-    findChildren(doc, node => types!.includes(node.type.name) && !node.attrs[attributeName!]).forEach((node, pos) => {
-      tr.setNodeAttribute(pos, attributeName!, generateID!())
+    findChildren(doc, node => types!.includes(node.type.name)).forEach(({ node }, pos) => {
+      if (injectNodeName)
+        tr.setNodeAttribute(pos, 'data-node-name', node.type.name)
+
+      if (!node.attrs[attributeName!])
+        tr.setNodeAttribute(pos, attributeName!, generateID!())
     })
 
     this.editor.view.dispatch(tr)
   },
   addProseMirrorPlugins() {
-    const { attributeName, types, generateID } = this.options
+    const { attributeName, types, generateID, injectNodeName } = this.options
 
     return [
       new Plugin({
@@ -67,9 +91,12 @@ export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
 
           getChangedRanges(transform).forEach(({ newRange }) => {
             const newNodes = findChildrenInRange(newDoc, newRange, node => types!.includes(node.type.name))
-            const newIds = newNodes.map(({ node }) => node.attrs[attributeName!]).filter(item => !!item)
 
+            const newIds = newNodes.map(({ node }) => node.attrs[attributeName!]).filter(item => !!item)
             newNodes.forEach(({ node, pos }) => {
+              if (injectNodeName && !node.attrs['data-node-name'])
+                tr.setNodeAttribute(pos, 'data-node-name', node.type.name)
+
               const uniqueId = node.attrs[attributeName!]
 
               if (!uniqueId) {
