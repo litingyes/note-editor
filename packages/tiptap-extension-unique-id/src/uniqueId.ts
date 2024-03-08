@@ -16,7 +16,7 @@ export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
   addOptions() {
     return {
       attributeName: 'id',
-      types: ['paragraph'],
+      types: ['blockContainer', 'paragraph'],
       generateID: () => nanoid(),
     }
   },
