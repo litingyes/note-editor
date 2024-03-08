@@ -1,0 +1,35 @@
+.ProseMirror.tiptap {
+  padding-left: 0;
+  padding-right: 32px;
+}
+
+.note-editor__block-container {
+  position: relative;
+  padding-left: 32px;
+}
+
+.note-editor__block-container:hover .note-editor__block-container__drag-bar {
+  display: block;
+}
+
+.note-editor__block-container:hover .note-editor__block-container__content {
+  background-color: #f1f5f9;
+}
+
+.note-editor__block-container__drag-bar {
+  display: none;
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  cursor: grab;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9 20q-.825 0-1.412-.587T7 18q0-.825.588-1.412T9 16q.825 0 1.413.588T11 18q0 .825-.587 1.413T9 20m6 0q-.825 0-1.412-.587T13 18q0-.825.588-1.412T15 16q.825 0 1.413.588T17 18q0 .825-.587 1.413T15 20m-6-6q-.825 0-1.412-.587T7 12q0-.825.588-1.412T9 10q.825 0 1.413.588T11 12q0 .825-.587 1.413T9 14m6 0q-.825 0-1.412-.587T13 12q0-.825.588-1.412T15 10q.825 0 1.413.588T17 12q0 .825-.587 1.413T15 14M9 8q-.825 0-1.412-.587T7 6q0-.825.588-1.412T9 4q.825 0 1.413.588T11 6q0 .825-.587 1.413T9 8m6 0q-.825 0-1.412-.587T13 6q0-.825.588-1.412T15 4q.825 0 1.413.588T17 6q0 .825-.587 1.413T15 8'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.note-editor__block-container__content {
+  padding: 0 4px;
+}

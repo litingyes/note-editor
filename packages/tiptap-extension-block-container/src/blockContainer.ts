@@ -1,7 +1,8 @@
-import { Node, mergeAttributes } from '@tiptap/core'
+import { Node, createStyleTag, mergeAttributes } from '@tiptap/core'
 import { Fragment, Slice } from '@tiptap/pm/model'
 import { TextSelection } from '@tiptap/pm/state'
 import document from './extentDocument'
+import style from './blockContainer.css?raw'
 
 export interface BlockContainerOptions {
   HTMLAttributes: Record<string, any>
@@ -75,6 +76,27 @@ export const blockContainer = Node.create({
 
     return {
       Enter: handleEnter,
+    }
+  },
+  addNodeView() {
+    return () => {
+      const dom = window.document.createElement('div')
+      dom.classList.add('note-editor__block-container')
+
+      const dragBar = window.document.createElement('div')
+      dragBar.classList.add('note-editor__block-container__drag-bar')
+
+      const content = window.document.createElement('div')
+      content.classList.add('note-editor__block-container__content')
+
+      createStyleTag(style, undefined, 'block-container')
+
+      dom.append(dragBar, content)
+
+      return {
+        dom,
+        contentDOM: content,
+      }
     }
   },
 })
