@@ -79,9 +79,12 @@ export const blockContainer = Node.create({
     }
   },
   addNodeView() {
-    return () => {
+    return ({ HTMLAttributes }) => {
       const dom = window.document.createElement('div')
       dom.classList.add('note-editor__block-container')
+      Object.keys(HTMLAttributes).forEach((key) => {
+        dom.setAttribute(key, HTMLAttributes[key])
+      })
 
       const dragBar = window.document.createElement('div')
       dragBar.classList.add('note-editor__block-container__drag-bar')
