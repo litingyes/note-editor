@@ -10,6 +10,7 @@ import type { CharacterCountOptions } from '@tiptap/extension-character-count'
 import { CharacterCount } from '@tiptap/extension-character-count'
 import type { CodeOptions } from '@tiptap/extension-code'
 import { Code } from '@tiptap/extension-code'
+import type { CodeBlockOptions } from '@tiptap/extension-code-block'
 import type { ColorOptions } from '@tiptap/extension-color'
 import { Color } from '@tiptap/extension-color'
 import Document from '@tiptap/extension-document'
@@ -77,6 +78,7 @@ export interface SetupKitOptions {
   bulletList: Partial<BulletListOptions> | false
   characterCount: Partial<CharacterCountOptions> | false
   code: Partial<CodeOptions> | false
+  codeBlock: Partial<CodeBlockOptions> | false
   color: Partial<ColorOptions> | false
   document: false
   dropcursor: Partial<DropcursorOptions> | false
@@ -129,6 +131,9 @@ export const setupKit = Extension.create<SetupKitOptions>({
 
     if (this.options.code !== false)
       extensions.push(Code.configure(this.options.code))
+
+    if (this.options.codeBlock !== false)
+      extensions.push(Code.configure(this.options.codeBlock))
 
     if (this.options.color !== false)
       extensions.push(Color.configure(this.options.color))

@@ -88,6 +88,7 @@ const { editor } = useNoteEditor({
 
 - [Blockquote](https://tiptap.dev/docs/editor/api/nodes/blockquote)
 - [BulletList](https://tiptap.dev/docs/editor/api/nodes/bullet-list)
+- [CodeBlock](https://tiptap.dev/docs/editor/api/nodes/code-block)
 - [Document](https://tiptap.dev/docs/editor/api/nodes/document)
 - [HardBreak](https://tiptap.dev/docs/editor/api/nodes/hard-break)
 - [Heading](https://tiptap.dev/docs/editor/api/nodes/heading)
