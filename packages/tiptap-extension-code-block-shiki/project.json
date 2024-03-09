@@ -1,0 +1,19 @@
+{
+  "name": "tiptap-extension-code-block-shiki",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tiptap-extension-code-block-shiki/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/tiptap-extension-code-block-shiki/dist",
+        "main": "packages/tiptap-extension-code-block-shiki/src/index.ts",
+        "tsConfig": "packages/tiptap-extension-code-block-shiki/tsconfig.lib.json",
+        "assets": ["packages/tiptap-extension-code-block-shiki/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

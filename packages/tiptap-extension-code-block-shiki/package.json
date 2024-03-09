@@ -1,0 +1,37 @@
+{
+  "name": "@note-editor/tiptap-extension-code-block-shiki",
+  "type": "module",
+  "version": "0.0.1-9",
+  "description": "code block extension for tiptap",
+  "license": "MIT",
+  "homepage": "https://note-editor.liting.ink/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liting-yes/note-editor.git",
+    "directory": "packages/tiptap-extension-code-block-shiki"
+  },
+  "keywords": [
+    "tiptap",
+    "tiptap extension"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@tiptap/extension-code-block": "^2.2.4"
+  }
+}

@@ -2,10 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "target": "es2015",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": ".",
@@ -16,15 +13,14 @@
       "tiptap-extension-block-container": [
         "packages/tiptap-extension-block-container/src/index.ts"
       ],
+      "tiptap-extension-code-block-shiki": [
+        "packages/tiptap-extension-code-block-shiki/src/index.ts"
+      ],
       "tiptap-extension-unique-id": [
         "packages/tiptap-extension-unique-id/src/index.ts"
       ],
-      "vue-kit": [
-        "packages/vue-kit/src/index.ts"
-      ],
-      "vue-play": [
-        "packages/vue-play/src/index.ts"
-      ]
+      "vue-kit": ["packages/vue-kit/src/index.ts"],
+      "vue-play": ["packages/vue-play/src/index.ts"]
     },
     "declaration": false,
     "importHelpers": true,
@@ -32,8 +28,5 @@
     "skipDefaultLibCheck": true,
     "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

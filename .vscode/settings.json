@@ -34,7 +34,8 @@
   "cSpell.words": [
     "blockquote",
     "dropcursor",
-    "Gapcursor"
+    "Gapcursor",
+    "shiki"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
