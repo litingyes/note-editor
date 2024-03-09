@@ -61,7 +61,7 @@ export const blockContainer = Node.create({
   },
   addKeyboardShortcuts() {
     const handleEnter = () => this.editor.commands.first(({ commands, state }) => {
-      return [() => commands.splitBlockContainer(state.selection.from)]
+      return [() => commands.newlineInCode(), () => commands.splitBlockContainer(state.selection.from)]
     })
 
     return {
