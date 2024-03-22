@@ -104,6 +104,7 @@ const { editor } = useNoteEditor({
 - [TaskList](https://tiptap.dev/docs/editor/api/nodes/task-list)
 - [Text](https://tiptap.dev/docs/editor/api/nodes/text)
 - [Block Container](/extensions/block-container)
+- [Code Block Shiki](/extensions/code-block-shiki)
 
 ### Marks
 
