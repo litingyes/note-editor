@@ -5,7 +5,7 @@ import { Plugin, PluginKey } from '@tiptap/pm/state'
 import type { DecorationAttrs } from '@tiptap/pm/view'
 import { Decoration, DecorationSet } from '@tiptap/pm/view'
 import { createStyleTag, findChildren } from '@tiptap/core'
-import type { BundledTheme, HighlighterGeneric, StringLiteralUnion } from 'shiki/bundle/web'
+import type { BundledLanguage, BundledTheme, HighlighterGeneric, StringLiteralUnion } from 'shiki/bundle/web'
 import { bundledLanguagesInfo, getHighlighter } from 'shiki/bundle/web'
 import type { Element } from 'hast'
 import style from './codeBlockShiki.css?raw'
@@ -17,7 +17,7 @@ export interface CodeBlockShikiOptions extends CodeBlockOptions {
 }
 
 export interface CodeBlockShikiStorage {
-  highlighter: HighlighterGeneric<any, 'vitesse-light'> | null
+  highlighter: HighlighterGeneric<BundledLanguage, BundledTheme> | null
 }
 
 export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockShikiStorage>({
