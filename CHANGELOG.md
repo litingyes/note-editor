@@ -1,3 +1,25 @@
+## 0.0.1-10 (2024-03-22)
+
+
+### 🚀 Features
+
+- **block-container:** reader drag bar ([7ed9c3e](https://github.com/liting-yes/note-editor/commit/7ed9c3e))
+- **code-block-shiki:** init ([ac6393f](https://github.com/liting-yes/note-editor/commit/ac6393f))
+- **shiki:** support option theme ([86c7258](https://github.com/liting-yes/note-editor/commit/86c7258))
+- **unique id:** add blockContainer as default type ([db331a5](https://github.com/liting-yes/note-editor/commit/db331a5))
+- **unique id:** support inject node-name ([12bcd5f](https://github.com/liting-yes/note-editor/commit/12bcd5f))
+- **vue:** add code block ([0a4a99a](https://github.com/liting-yes/note-editor/commit/0a4a99a))
+
+### 🩹 Fixes
+
+- **block container:** set attrs on dom ([9c34cc7](https://github.com/liting-yes/note-editor/commit/9c34cc7))
+- **block container:** handle enter ([25cb01e](https://github.com/liting-yes/note-editor/commit/25cb01e))
+- **shiki:** highlighter-generic type ([8089bac](https://github.com/liting-yes/note-editor/commit/8089bac))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.0.1-9 (2024-03-07)
 
 This was a version bump only, there were no code changes.
