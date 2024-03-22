@@ -35,6 +35,7 @@
     "blockquote",
     "dropcursor",
     "Gapcursor",
+    "Prosemirror",
     "shiki"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"

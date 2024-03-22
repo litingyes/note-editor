@@ -132,9 +132,25 @@ importers:
 
   packages/tiptap-extension-code-block-shiki:
     dependencies:
+      '@tiptap/core':
+        specifier: ^2.2.4
+        version: 2.2.4(@tiptap/pm@2.2.4)
       '@tiptap/extension-code-block':
         specifier: ^2.2.4
         version: 2.2.4(@tiptap/core@2.2.4)(@tiptap/pm@2.2.4)
+      '@tiptap/pm':
+        specifier: ^2.2.4
+        version: 2.2.4
+    devDependencies:
+      '@types/hast':
+        specifier: ^3.0.4
+        version: 3.0.4
+      hast:
+        specifier: ^1.0.0
+        version: 1.0.0
+      shiki:
+        specifier: ^1.1.7
+        version: 1.1.7
 
   packages/tiptap-extension-unique-id:
     dependencies:
@@ -153,6 +169,9 @@ importers:
       '@note-editor/tiptap-extension-block-container':
         specifier: 0.0.1-9
         version: link:../tiptap-extension-block-container
+      '@note-editor/tiptap-extension-code-block-shiki':
+        specifier: workspace:*
+        version: link:../tiptap-extension-code-block-shiki
       '@note-editor/tiptap-extension-unique-id':
         specifier: 0.0.1-9
         version: link:../tiptap-extension-unique-id
@@ -3936,6 +3955,12 @@ packages:
       '@types/node': 18.16.9
     dev: true
 
+  /@types/hast@3.0.4:
+    resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
+    dependencies:
+      '@types/unist': 2.0.10
+    dev: true
+
   /@types/http-cache-semantics@4.0.4:
     resolution: {integrity: sha512-1m0bIFVc7eJWyve9S0RnuRgcQqF/Xd5QsUZAZeQFr1Q3/p9JWoQQEqmVy+DPTNpGXwhgIetAoYF8JSc33q29QA==}
     dev: true
@@ -7258,6 +7283,11 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       function-bind: 1.1.2
+    dev: true
+
+  /hast@1.0.0:
+    resolution: {integrity: sha512-vFUqlRV5C+xqP76Wwq2SrM0kipnmpxJm7OfvVXpB35Fp+Fn4MV+ozr+JZr5qFvyR1q/U+Foim2x+3P+x9S1PLA==}
+    deprecated: Renamed to rehype
     dev: true
 
   /he@1.2.0:

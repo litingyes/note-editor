@@ -11,6 +11,7 @@ import { CharacterCount } from '@tiptap/extension-character-count'
 import type { CodeOptions } from '@tiptap/extension-code'
 import { Code } from '@tiptap/extension-code'
 import type { CodeBlockOptions } from '@tiptap/extension-code-block'
+import { CodeBlock } from '@tiptap/extension-code-block'
 import type { ColorOptions } from '@tiptap/extension-color'
 import { Color } from '@tiptap/extension-color'
 import Document from '@tiptap/extension-document'
@@ -71,6 +72,8 @@ import type { UniqueIdOptions } from '@note-editor/tiptap-extension-unique-id'
 import { uniqueId } from '@note-editor/tiptap-extension-unique-id'
 import type { BlockContainerOptions } from '@note-editor/tiptap-extension-block-container'
 import { blockContainer } from '@note-editor/tiptap-extension-block-container'
+import type { CodeBlockShikiOptions } from '@note-editor/tiptap-extension-code-block-shiki'
+import { codeBlockShiki } from '@note-editor/tiptap-extension-code-block-shiki'
 
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
@@ -110,6 +113,7 @@ export interface SetupKitOptions {
   underline: Partial<UnderlineOptions> | false
   uniqueId: Partial<UniqueIdOptions> | false
   blockContainer: Partial<BlockContainerOptions> | false
+  codeBlockShiki: Partial<CodeBlockShikiOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -132,8 +136,11 @@ export const setupKit = Extension.create<SetupKitOptions>({
     if (this.options.code !== false)
       extensions.push(Code.configure(this.options.code))
 
-    if (this.options.codeBlock !== false)
-      extensions.push(Code.configure(this.options.codeBlock))
+    if (this.options.codeBlockShiki === false && this.options.codeBlock !== false)
+      extensions.push(CodeBlock.configure(this.options.codeBlock))
+
+    if (this.options.codeBlockShiki !== false)
+      extensions.push(codeBlockShiki.configure(this.options.codeBlockShiki))
 
     if (this.options.color !== false)
       extensions.push(Color.configure(this.options.color))

@@ -1,1 +1,1 @@
-export * from './lib/tiptap-extension-code-block-shiki'
+export * from './codeBlockShiki'
