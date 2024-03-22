@@ -5,7 +5,7 @@ import { Plugin, PluginKey } from '@tiptap/pm/state'
 import type { DecorationAttrs } from '@tiptap/pm/view'
 import { Decoration, DecorationSet } from '@tiptap/pm/view'
 import { createStyleTag, findChildren } from '@tiptap/core'
-import type { HighlighterGeneric } from 'shiki/bundle/web'
+import type { BundledTheme, HighlighterGeneric, StringLiteralUnion } from 'shiki/bundle/web'
 import { bundledLanguagesInfo, getHighlighter } from 'shiki/bundle/web'
 import type { Element } from 'hast'
 import style from './codeBlockShiki.css?raw'
@@ -13,6 +13,7 @@ import style from './codeBlockShiki.css?raw'
 const languages = bundledLanguagesInfo.map(item => [item.id, item.name, ...(item.aliases ?? [])]).flat()
 
 export interface CodeBlockShikiOptions extends CodeBlockOptions {
+  theme: StringLiteralUnion<BundledTheme, string>
 }
 
 export interface CodeBlockShikiStorage {
@@ -23,6 +24,7 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
   addOptions() {
     return {
       ...this.parent?.(),
+      theme: 'vitesse-light',
     }
   },
   addStorage() {
@@ -33,7 +35,7 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
   async onBeforeCreate() {
     createStyleTag(style, undefined, 'code-block-shiki')
     this.storage.highlighter = await getHighlighter({
-      themes: ['vitesse-light'],
+      themes: [this.options.theme],
       langs: bundledLanguagesInfo.map(item => item.id),
     })
   },
@@ -43,7 +45,7 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
       new Plugin({
         key: new PluginKey(this.name),
         state: {
-          init: (_, { doc }) => getDecorations({ doc, name: this.name, highlighter: this.storage.highlighter }),
+          init: (_, { doc }) => getDecorations({ doc, name: this.name, highlighter: this.storage.highlighter, theme: this.options.theme }),
           apply: (transaction, decorationSet, oldState, newState) => {
             const oldNodeName = oldState.selection.$head.parent.type.name
             const newNodeName = newState.selection.$head.parent.type.name
@@ -57,6 +59,7 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
                 doc: transaction.doc,
                 name: this.name,
                 highlighter: this.storage.highlighter,
+                theme: this.options.theme,
               })
             }
 
@@ -78,10 +81,12 @@ function getDecorations({
   doc,
   name,
   highlighter,
+  theme,
 }: {
   doc: ProsemirrorNode
   name: string
   highlighter: CodeBlockShikiStorage['highlighter']
+  theme: CodeBlockShikiOptions['theme']
 }) {
   let decorations: Decoration[] = []
 
@@ -92,7 +97,7 @@ function getDecorations({
       return
 
     const preNode = highlighter?.codeToHast(block.node.textContent, {
-      theme: 'vitesse-light',
+      theme,
       lang: language,
     }).children[0] as Element
 
