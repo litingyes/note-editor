@@ -13,7 +13,8 @@
     "commit": "git-cz"
   },
   "dependencies": {
-    "@note-editor/vue-kit": "workspace:*"
+    "@note-editor/vue-kit": "workspace:*",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.4",

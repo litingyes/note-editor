@@ -11,6 +11,9 @@ importers:
       '@note-editor/vue-kit':
         specifier: workspace:*
         version: link:packages/vue-kit
+      vue:
+        specifier: ^3.4.21
+        version: 3.4.21(typescript@5.3.3)
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^2.6.4
