@@ -48,6 +48,10 @@ export default defineConfig({
               { text: 'Unique ID', link: '/extensions/unique-id' },
             ],
           },
+          {
+            text: 'Playground',
+            link: '/playground',
+          },
         ],
       },
     },
@@ -74,6 +78,10 @@ export default defineConfig({
               { text: 'Code block shiki (shiki代码块)', link: '/zh-CN/extensions/code-block-shiki' },
               { text: 'Unique ID (唯一ID)', link: '/zh-CN/extensions/unique-id' },
             ],
+          },
+          {
+            text: 'Playground (演练场)',
+            link: '/zh-CN/playground',
           },
         ],
       },
