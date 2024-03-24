@@ -45,7 +45,9 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
       new Plugin({
         key: new PluginKey(this.name),
         state: {
-          init: (_, { doc }) => getDecorations({ doc, name: this.name, highlighter: this.storage.highlighter, theme: this.options.theme }),
+          init: (_, { doc }) => {
+            return getDecorations({ doc, name: this.name, highlighter: this.storage.highlighter, theme: this.options.theme })
+          },
           apply: (transaction, decorationSet, oldState, newState) => {
             const oldNodeName = oldState.selection.$head.parent.type.name
             const newNodeName = newState.selection.$head.parent.type.name
@@ -146,19 +148,19 @@ function getDecorations({
   findChildren(doc, node => node.type.name === name).forEach((block) => {
     // @ts-expect-error language
     const language = block.node.attrs.language || 'text'
-    if (!languages.includes(language))
+    if (!languages.includes(language) || highlighter)
       return
 
-    const preNode = highlighter?.codeToHast(block.node.textContent, {
+    const preNode = highlighter!.codeToHast(block.node.textContent, {
       theme,
       lang: language,
     }).children[0] as Element
 
     decorations.push(Decoration.node(block.pos, block.pos + block.node.nodeSize, {
       // @ts-expect-error class
-      class: `${preNode.properties.class} node-editor__code-block-shiki`,
+      class: `${preNode.properties?.class} node-editor__code-block-shiki`,
       // @ts-expect-error style
-      style: preNode.properties.style,
+      style: preNode.properties?.style,
     } as DecorationAttrs))
 
     let from = block.pos + 1
