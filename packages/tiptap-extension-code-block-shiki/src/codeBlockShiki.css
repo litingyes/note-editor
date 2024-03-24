@@ -1,4 +1,24 @@
 .node-editor__code-block-shiki {
+  position: relative;
   border-radius: 8px;
   padding: 4px 8px;
+}
+
+.note-editor__code-block-shiki__lang-tag {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.note-editor__code-block-shiki__select-lang {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  font-size: 12px;
+  line-height: 16px;
+  cursor: pointer;
 }

@@ -74,6 +74,60 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
       }),
     ]
   },
+  addNodeView() {
+    return ({ editor, node, getPos, HTMLAttributes }) => {
+      const dom = window.document.createElement('pre')
+      dom.classList.add('note-editor__code-block-shiki')
+      Object.keys(HTMLAttributes).forEach((key) => {
+        dom.setAttribute(key, HTMLAttributes[key])
+      })
+
+      const content = window.document.createElement('code')
+      // @ts-expect-error language
+      const langClass = this.options.languageClassPrefix + node.attrs.language
+      content.classList.add(langClass)
+      dom.append(content)
+
+      if (this.editor.isEditable) {
+        const selectLang = window.document.createElement('select')
+        selectLang.classList.add('note-editor__code-block-shiki__select-lang')
+        selectLang.addEventListener('change', (event) => {
+          // @ts-expect-error value
+          const lang = event.target.value
+          editor.commands.command(({ tr }) => {
+            const pos = (getPos as () => number)()
+            tr.setNodeAttribute(pos, 'language', lang)
+
+            return true
+          })
+        })
+        const options = bundledLanguagesInfo.map((item) => {
+          const option = document.createElement('option')
+          option.setAttribute('value', item.id)
+          // @ts-expect-error language
+          if (node.attrs.language === item.id || node.attrs.language === item.name || item.aliases?.includes(node.attrs.language))
+            option.setAttribute('selected', '')
+
+          option.textContent = item.id
+          return option
+        })
+        selectLang.append(...options)
+        dom.append(selectLang)
+      }
+      else {
+        const langTag = window.document.createElement('div')
+        langTag.classList.add('note-editor__code-block-shiki__lang-tag')
+        // @ts-expect-error language
+        langTag.textContent = node.attrs.language ?? 'text'
+        dom.append(langTag)
+      }
+
+      return {
+        dom,
+        contentDOM: content,
+      }
+    }
+  },
 })
 
 function getDecorations({
