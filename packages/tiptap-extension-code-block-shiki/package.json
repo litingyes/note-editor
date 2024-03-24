@@ -36,11 +36,11 @@
   "dependencies": {
     "@tiptap/core": "^2.2.4",
     "@tiptap/extension-code-block": "^2.2.4",
-    "@tiptap/pm": "^2.2.4"
+    "@tiptap/pm": "^2.2.4",
+    "shiki": "^1.2.0"
   },
   "devDependencies": {
     "@types/hast": "^3.0.4",
-    "hast": "^1.0.0",
-    "shiki": "^1.1.7"
+    "hast": "^1.0.0"
   }
 }
