@@ -68,7 +68,6 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
         },
         props: {
           decorations(state) {
-            // console.log('decorations', this.getState(state))
             return this.getState(state)
           },
         },
@@ -109,12 +108,12 @@ function getDecorations({
     } as DecorationAttrs))
 
     let from = block.pos + 1
-    const lines = (preNode.children[0] as Element).children as Element[]
+    const lines = (preNode.children[0] as Element).children
     for (const line of lines) {
-      if (line.children?.length) {
+      if ((line as Element).children?.length) {
         let lineFrom = from
+        // @ts-expect-error line type
         line.children?.forEach((node) => {
-          // @ts-expect-error value
           const nodeLen = node.children[0].value.length
           decorations.push(Decoration.inline(lineFrom, lineFrom + nodeLen, (node as Element).properties as DecorationAttrs))
           lineFrom += nodeLen
@@ -123,6 +122,9 @@ function getDecorations({
         // prosemirror do not support add wrap for line
         // decorations.push(Decoration.inline(from, lineFrom, line.properties as DecorationAttrs))
         from = lineFrom
+      }
+      else if (line.type === 'text') {
+        from += line.value.length
       }
     }
   })
