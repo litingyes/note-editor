@@ -9,7 +9,8 @@
     "lint:fix": "eslint . --fix",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "commit": "git-cz"
   },
   "dependencies": {
     "@note-editor/vue-kit": "workspace:*"
@@ -18,6 +19,7 @@
     "@antfu/eslint-config": "^2.6.4",
     "@commitlint/cli": "^19.0.3",
     "@commitlint/config-conventional": "^19.0.3",
+    "@commitlint/cz-commitlint": "^19.2.0",
     "@nx/eslint": "^18.0.7",
     "@nx/js": "^18.0.7",
     "@nx/rollup": "18.0.7",
@@ -39,6 +41,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "husky": "^9.0.11",
+    "inquirer": "9",
     "jsdom": "~22.1.0",
     "lint-staged": "^15.2.2",
     "nx": "18.0.7",
@@ -56,7 +59,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "@commitlint/prompt"
+      "path": "@commitlint/cz-commitlint"
     }
   },
   "commitlint": {
