@@ -20,8 +20,7 @@
   display: none;
   position: absolute;
   left: 4px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   width: 24px;
   height: 24px;
   cursor: grab;
