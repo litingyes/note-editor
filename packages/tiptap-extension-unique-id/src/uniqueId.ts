@@ -1,4 +1,4 @@
-import { Extension, combineTransactionSteps, findChildren, findChildrenInRange, findDuplicates, getChangedRanges } from '@tiptap/core'
+import { Extension, combineTransactionSteps, findChildrenInRange, findDuplicates, getChangedRanges } from '@tiptap/core'
 import { nanoid } from 'nanoid'
 import type { Transaction } from '@tiptap/pm/state'
 import { Plugin, PluginKey } from '@tiptap/pm/state'
@@ -12,7 +12,7 @@ export interface UniqueIdOptions {
 
 const pluginKey = new PluginKey('uniqueId')
 
-export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
+export const uniqueId = Extension.create<UniqueIdOptions>({
   name: 'uniqueId',
   addOptions() {
     return {
@@ -67,7 +67,10 @@ export const uniqueId = Extension.create<Partial<UniqueIdOptions>>({
     const { tr, doc } = this.editor.state
     const { attributeName, types, generateID, injectNodeName } = this.options
 
-    findChildren(doc, node => types!.includes(node.type.name)).forEach(({ node }, pos) => {
+    doc.descendants((node, pos) => {
+      if (node.type.name === 'text' || !types?.includes(node.type.name))
+        return
+
       if (injectNodeName)
         tr.setNodeAttribute(pos, 'data-node-name', node.type.name)
 
