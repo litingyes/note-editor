@@ -1,3 +1,18 @@
+## 0.1.0 (2024-03-24)
+
+
+### 🚀 Features
+
+- **code-block-shiki:** support display and toggle lang ([9e60091](https://github.com/liting-yes/note-editor/commit/9e60091))
+
+### 🩹 Fixes
+
+- **code-block-shiki:** calculate the length of ([9086c2a](https://github.com/liting-yes/note-editor/commit/9086c2a))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.0.1-10 (2024-03-22)
 
 
