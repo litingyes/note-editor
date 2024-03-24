@@ -34,7 +34,7 @@ const editor = new Editor({
 
 ### theme
 
-高亮主题, 想查看更多请跳转 [shiki themes]([Want to see more please check](https://shiki.style/themes))
+高亮主题, 想查看更多请跳转 [shiki themes](https://shiki.style/themes)
 
 ```ts
 codeBlockShiki.configure({

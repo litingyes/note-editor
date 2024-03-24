@@ -34,7 +34,7 @@ const editor = new Editor({
 
 ### theme
 
-Theme for highlight, want to see more please check [shiki themes]([Want to see more please check](https://shiki.style/themes))
+Theme for highlight, want to see more please check [shiki themes](https://shiki.style/themes)
 
 ```ts
 codeBlockShiki.configure({
