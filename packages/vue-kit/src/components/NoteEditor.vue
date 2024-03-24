@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
+import type { Editor } from '@tiptap/core'
 import { EditorContent } from '@tiptap/vue-3'
 import { useNoteEditor } from '../composables/useNoteEditor'
+
+export interface NodeEditorInstance {
+  editor: Editor
+}
 
 const noteEditorRef = ref()
 const { editor } = useNoteEditor()
