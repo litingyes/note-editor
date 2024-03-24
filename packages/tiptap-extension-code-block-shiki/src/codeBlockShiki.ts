@@ -120,7 +120,8 @@ function getDecorations({
           lineFrom += nodeLen
         })
 
-        decorations.push(Decoration.inline(from, lineFrom, line.properties as DecorationAttrs))
+        // prosemirror do not support add wrap for line
+        // decorations.push(Decoration.inline(from, lineFrom, line.properties as DecorationAttrs))
         from = lineFrom
       }
     }
