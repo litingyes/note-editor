@@ -1,0 +1,19 @@
+{
+  "name": "tiptap-extension-details",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tiptap-extension-details/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/tiptap-extension-details/dist",
+        "main": "packages/tiptap-extension-details/src/index.ts",
+        "tsConfig": "packages/tiptap-extension-details/tsconfig.lib.json",
+        "assets": ["packages/tiptap-extension-details/*.md"]
+      }
+    }
+  },
+  "tags": []
+}

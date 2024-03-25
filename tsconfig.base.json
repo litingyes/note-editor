@@ -16,6 +16,9 @@
       "tiptap-extension-code-block-shiki": [
         "packages/tiptap-extension-code-block-shiki/src/index.ts"
       ],
+      "tiptap-extension-details": [
+        "packages/tiptap-extension-details/src/index.ts"
+      ],
       "tiptap-extension-unique-id": [
         "packages/tiptap-extension-unique-id/src/index.ts"
       ],

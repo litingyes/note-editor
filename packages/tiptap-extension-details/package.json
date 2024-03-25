@@ -1,0 +1,39 @@
+{
+  "name": "@note-editor/tiptap-extension-details",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "details extension for tiptap",
+  "license": "MIT",
+  "homepage": "https://note-editor.liting.ink/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liting-yes/note-editor.git",
+    "directory": "packages/tiptap-extension-details"
+  },
+  "keywords": [
+    "tiptap",
+    "tiptap extension",
+    "details"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@tiptap/core": "^2.2"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
