@@ -32,6 +32,7 @@ export default defineConfig({
           { text: 'Guide', link: '/guide/vue' },
           { text: 'Extensions', link: '/extensions/block-container' },
           { text: 'Playground', link: '/playground' },
+          { text: 'CHANGELOG', link: '/changelog' },
         ],
         sidebar: [
           {
@@ -63,6 +64,8 @@ export default defineConfig({
           { text: '指南', link: '/zh-CN/guide/vue' },
           { text: '插件', link: '/zh-CN/extensions/block-container' },
           { text: '演练场', link: '/zh-CN/playground' },
+          { text: 'CHANGELOG', link: '/zh-CN/changelog' },
+
         ],
         sidebar: [
           {
