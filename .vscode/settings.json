@@ -36,7 +36,8 @@
     "dropcursor",
     "Gapcursor",
     "Prosemirror",
-    "shiki"
+    "shiki",
+    "unref"
   ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
