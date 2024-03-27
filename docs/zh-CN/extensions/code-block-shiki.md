@@ -2,6 +2,10 @@
 
 基于 Shiki 进行代码高亮的代码块插件
 
+::: warning
+此插件会覆盖掉 [Code block](https://tiptap.dev/docs/editor/api/nodes/code-block)
+:::
+
 ## 安装
 
 ::: code-group

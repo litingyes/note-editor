@@ -2,6 +2,10 @@
 
 Code block extension with shiki for tiptap
 
+::: warning
+The extension will override [Code block](https://tiptap.dev/docs/editor/api/nodes/code-block).
+:::
+
 ## Installation
 
 ::: code-group
