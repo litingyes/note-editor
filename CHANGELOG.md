@@ -1,3 +1,21 @@
+## 0.2.0 (2024-03-27)
+
+
+### 🚀 Features
+
+- **details:** done ([681d497](https://github.com/liting-yes/note-editor/commit/681d497))
+- **unique id:** add types as default value ([5041e98](https://github.com/liting-yes/note-editor/commit/5041e98))
+- **vue-kit:** export vue sfc instance type ([c55e238](https://github.com/liting-yes/note-editor/commit/c55e238))
+
+### 🩹 Fixes
+
+- **code-block-shiki:** handle highlighter is null ([2c35721](https://github.com/liting-yes/note-editor/commit/2c35721))
+- **unique-id:** traversal logic in create ([f0de32b](https://github.com/liting-yes/note-editor/commit/f0de32b))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.1.0 (2024-03-24)
 
 

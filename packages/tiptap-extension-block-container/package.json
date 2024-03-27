@@ -1,7 +1,7 @@
 {
   "name": "@note-editor/tiptap-extension-block-container",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "block container extension for tiptap",
   "license": "MIT",
   "homepage": "https://note-editor.liting.ink/",
