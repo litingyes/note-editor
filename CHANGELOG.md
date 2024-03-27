@@ -1,3 +1,14 @@
+## 0.2.1 (2024-03-27)
+
+
+### 🩹 Fixes
+
+- **code-block-shiki:** find code-block change and highlighter is valid ([c4ce39e](https://github.com/liting-yes/note-editor/commit/c4ce39e))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.2.0 (2024-03-27)
 
 

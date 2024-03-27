@@ -188,16 +188,16 @@ importers:
   packages/vue-kit:
     dependencies:
       '@note-editor/tiptap-extension-block-container':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../tiptap-extension-block-container
       '@note-editor/tiptap-extension-code-block-shiki':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../tiptap-extension-code-block-shiki
       '@note-editor/tiptap-extension-details':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../tiptap-extension-details
       '@note-editor/tiptap-extension-unique-id':
-        specifier: 0.2.0
+        specifier: 0.2.1
         version: link:../tiptap-extension-unique-id
       '@tiptap/core':
         specifier: ^2.2.4

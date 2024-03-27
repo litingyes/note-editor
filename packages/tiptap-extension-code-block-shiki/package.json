@@ -1,7 +1,7 @@
 {
   "name": "@note-editor/tiptap-extension-code-block-shiki",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "code block extension with shiki for tiptap",
   "license": "MIT",
   "homepage": "https://note-editor.liting.ink/",
