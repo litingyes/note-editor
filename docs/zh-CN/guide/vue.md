@@ -88,7 +88,6 @@ const { editor } = useNoteEditor({
 
 - [Blockquote](https://tiptap.dev/docs/editor/api/nodes/blockquote)
 - [BulletList](https://tiptap.dev/docs/editor/api/nodes/bullet-list)
-- [CodeBlock](https://tiptap.dev/docs/editor/api/nodes/code-block)
 - [Document](https://tiptap.dev/docs/editor/api/nodes/document)
 - [HardBreak](https://tiptap.dev/docs/editor/api/nodes/hard-break)
 - [Heading](https://tiptap.dev/docs/editor/api/nodes/heading)
@@ -104,7 +103,8 @@ const { editor } = useNoteEditor({
 - [TaskList](https://tiptap.dev/docs/editor/api/nodes/task-list)
 - [Text](https://tiptap.dev/docs/editor/api/nodes/text)
 - [Block Container](/zh-CN/extensions/block-container)
-- [Code Block Shiki](/zh-CN/extensions/block-container)
+- [Code Block Shiki](/zh-CN/extensions/code-block-shiki)
+- [Details](/zh-CN/extensions/details)
 
 ### Marks
 
