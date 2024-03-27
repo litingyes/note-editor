@@ -1,1 +1,3 @@
-export * from './lib/tiptap-extension-details'
+export * from './details'
+export * from './detailsContent'
+export * from './detailsSummary'

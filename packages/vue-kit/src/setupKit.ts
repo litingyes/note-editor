@@ -74,6 +74,8 @@ import type { BlockContainerOptions } from '@note-editor/tiptap-extension-block-
 import { blockContainer } from '@note-editor/tiptap-extension-block-container'
 import type { CodeBlockShikiOptions } from '@note-editor/tiptap-extension-code-block-shiki'
 import { codeBlockShiki } from '@note-editor/tiptap-extension-code-block-shiki'
+import type { DetailsOptions } from '@note-editor/tiptap-extension-details'
+import { details } from '@note-editor/tiptap-extension-details'
 
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
@@ -114,6 +116,7 @@ export interface SetupKitOptions {
   uniqueId: Partial<UniqueIdOptions> | false
   blockContainer: Partial<BlockContainerOptions> | false
   codeBlockShiki: Partial<CodeBlockShikiOptions> | false
+  details: Partial<DetailsOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -234,6 +237,9 @@ export const setupKit = Extension.create<SetupKitOptions>({
 
     if (this.options.uniqueId !== false)
       extensions.push(uniqueId.configure(this.options.uniqueId))
+
+    if (this.options.details !== false)
+      extensions.push(details.configure(this.options.details))
 
     return extensions
   },

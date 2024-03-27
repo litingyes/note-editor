@@ -164,7 +164,14 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0
 
-  packages/tiptap-extension-details: {}
+  packages/tiptap-extension-details:
+    dependencies:
+      '@tiptap/core':
+        specifier: ^2.2
+        version: 2.2.4(@tiptap/pm@2.2.4)
+      '@tiptap/pm':
+        specifier: ^2.2.4
+        version: 2.2.4
 
   packages/tiptap-extension-unique-id:
     dependencies:
@@ -186,6 +193,9 @@ importers:
       '@note-editor/tiptap-extension-code-block-shiki':
         specifier: 0.1.0
         version: link:../tiptap-extension-code-block-shiki
+      '@note-editor/tiptap-extension-details':
+        specifier: workspace:^0.1.0
+        version: link:../tiptap-extension-details
       '@note-editor/tiptap-extension-unique-id':
         specifier: 0.1.0
         version: link:../tiptap-extension-unique-id
