@@ -10,8 +10,6 @@ import { bundledLanguagesInfo, getHighlighter } from 'shiki/bundle/web'
 import type { Element } from 'hast'
 import style from './codeBlockShiki.css?raw'
 
-const languages = bundledLanguagesInfo.map(item => [item.id, item.name, ...(item.aliases ?? [])]).flat()
-
 export interface CodeBlockShikiOptions extends CodeBlockOptions {
   theme: StringLiteralUnion<BundledTheme, string>
 }
@@ -55,6 +53,9 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
             if (
               transaction.docChanged
               && ([oldNodeName, newNodeName].includes(this.name)
+              // only toggle language for code block
+              // @ts-expect-error attr
+              || transaction.steps.find(item => item.attr === 'language')
               )
             ) {
               return getDecorations({
@@ -132,6 +133,13 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
   },
 })
 
+function formatLanguage(lang: string) {
+  if (!lang)
+    return null
+
+  return bundledLanguagesInfo.find(item => [item.id, item.name, ...(item.aliases ?? [])])?.id
+}
+
 function getDecorations({
   doc,
   name,
@@ -144,16 +152,17 @@ function getDecorations({
   theme: CodeBlockShikiOptions['theme']
 }) {
   let decorations: Decoration[] = []
+  if (!highlighter)
+    return decorations
 
   findChildren(doc, node => node.type.name === name).forEach((block) => {
     // @ts-expect-error language
-    const language = block.node.attrs.language || 'text'
-    if (!languages.includes(language) || highlighter)
-      return
+    block.node.attrs.language = formatLanguage(block.node.attrs.language) ?? 'text'
 
     const preNode = highlighter!.codeToHast(block.node.textContent, {
       theme,
-      lang: language,
+      // @ts-expect-error language
+      lang: block.node.attrs.language,
     }).children[0] as Element
 
     decorations.push(Decoration.node(block.pos, block.pos + block.node.nodeSize, {
