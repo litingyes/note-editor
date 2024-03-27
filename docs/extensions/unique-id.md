@@ -48,7 +48,7 @@ All types that should get a unique ID, for example ['paragraph']
 
 ```ts
 uniqueID.configure({
-  types: ['paragraph'] // default
+  types: ['blockContainer', 'paragraph', 'details', 'detailsSummary', 'detailsContent'] // default
 })
 ```
 

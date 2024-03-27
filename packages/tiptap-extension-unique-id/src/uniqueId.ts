@@ -17,7 +17,8 @@ export const uniqueId = Extension.create<UniqueIdOptions>({
   addOptions() {
     return {
       attributeName: 'id',
-      types: ['blockContainer', 'paragraph'],
+      name: 'detailsSummary',
+      types: ['blockContainer', 'paragraph', 'details', 'detailsSummary', 'detailsContent'],
       generateID: () => nanoid(),
       injectNodeName: true,
     }

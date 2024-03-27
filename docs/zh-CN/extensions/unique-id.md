@@ -48,7 +48,7 @@ uniqueID.configure({
 
 ```ts
 uniqueID.configure({
-  types: ['paragraph'] // default
+  types: ['blockContainer', 'paragraph', 'details', 'detailsSummary', 'detailsContent'] // default
 })
 ```
 
