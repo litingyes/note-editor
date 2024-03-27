@@ -46,6 +46,7 @@ export default defineConfig({
             items: [
               { text: 'Block container', link: '/extensions/block-container' },
               { text: 'Code block shiki', link: '/extensions/code-block-shiki' },
+              { text: 'Details', link: '/extensions/details' },
               { text: 'Unique ID', link: '/extensions/unique-id' },
             ],
           },
@@ -79,6 +80,7 @@ export default defineConfig({
             items: [
               { text: 'Block container (块容器)', link: '/zh-CN/extensions/block-container' },
               { text: 'Code block shiki (shiki代码块)', link: '/zh-CN/extensions/code-block-shiki' },
+              { text: 'Details (详情块)', link: '/zh-CN/extensions/details' },
               { text: 'Unique ID (唯一ID)', link: '/zh-CN/extensions/unique-id' },
             ],
           },
