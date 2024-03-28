@@ -66,12 +66,14 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
               })
             }
 
+            // @ts-expect-error mapping
             return decorationSet.map(transaction.mapping, transaction.doc)
           },
         },
         props: {
+          // @ts-expect-error mapping
           decorations(state) {
-            return this.getState(state)
+            return this.getState(state)!
           },
         },
       }),
