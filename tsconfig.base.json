@@ -19,6 +19,9 @@
       "tiptap-extension-details": [
         "packages/tiptap-extension-details/src/index.ts"
       ],
+      "tiptap-extension-emoji": [
+        "packages/tiptap-extension-emoji/src/index.ts"
+      ],
       "tiptap-extension-unique-id": [
         "packages/tiptap-extension-unique-id/src/index.ts"
       ],

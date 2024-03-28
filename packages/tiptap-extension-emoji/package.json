@@ -1,0 +1,31 @@
+{
+  "name": "@note-editor/tiptap-extension-emoji",
+  "type": "module",
+  "version": "0.2.1",
+  "description": "emoji  extension for tiptap",
+  "license": "MIT",
+  "homepage": "https://note-editor.liting.ink/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liting-yes/note-editor.git",
+    "directory": "packages/tiptap-extension-emoji"
+  },
+  "keywords": [
+    "tiptap",
+    "tiptap extension",
+    "emoji"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "tiptap-extension-emoji",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/tiptap-extension-emoji/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "packages/tiptap-extension-emoji/dist",
+        "main": "packages/tiptap-extension-emoji/src/index.ts",
+        "tsConfig": "packages/tiptap-extension-emoji/tsconfig.lib.json",
+        "assets": ["packages/tiptap-extension-emoji/*.md"]
+      }
+    }
+  },
+  "tags": []
+}
