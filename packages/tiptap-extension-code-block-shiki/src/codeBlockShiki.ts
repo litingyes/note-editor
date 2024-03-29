@@ -66,14 +66,12 @@ export const codeBlockShiki = CodeBlock.extend<CodeBlockShikiOptions, CodeBlockS
               })
             }
 
-            // @ts-expect-error mapping
             return decorationSet.map(transaction.mapping, transaction.doc)
           },
         },
         props: {
-          // @ts-expect-error mapping
           decorations(state) {
-            return this.getState(state)!
+            return this.getState(state)
           },
         },
       }),
@@ -155,7 +153,7 @@ function getDecorations({
 }) {
   let decorations: Decoration[] = []
   if (!highlighter)
-    return decorations
+    return DecorationSet.create(doc, decorations)
 
   findChildren(doc, node => node.type.name === name).forEach((block) => {
     // @ts-expect-error language
