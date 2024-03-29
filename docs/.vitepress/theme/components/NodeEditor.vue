@@ -13,6 +13,8 @@ onMounted(() => {
     <pre><code class="language-typescript">console.log("Hello, node editor !")</code></pre>
     <h2>Details</h2>
     <details><summary>Summary</summary><div><p>details content</p></div></details>
+    <h2>Emoji</h2>
+    <p>😀🙂😗</p>
   `)
   }, 1000)
 })

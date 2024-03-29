@@ -76,6 +76,8 @@ import type { CodeBlockShikiOptions } from '@note-editor/tiptap-extension-code-b
 import { codeBlockShiki } from '@note-editor/tiptap-extension-code-block-shiki'
 import type { DetailsOptions } from '@note-editor/tiptap-extension-details'
 import { details } from '@note-editor/tiptap-extension-details'
+import type { EmojiOptions } from '@note-editor/tiptap-extension-emoji'
+import { emoji } from '@note-editor/tiptap-extension-emoji'
 
 export interface SetupKitOptions {
   blockquote: Partial<BlockquoteOptions> | false
@@ -117,6 +119,7 @@ export interface SetupKitOptions {
   blockContainer: Partial<BlockContainerOptions> | false
   codeBlockShiki: Partial<CodeBlockShikiOptions> | false
   details: Partial<DetailsOptions> | false
+  emoji: Partial<EmojiOptions> | false
 }
 
 export const setupKit = Extension.create<SetupKitOptions>({
@@ -240,6 +243,9 @@ export const setupKit = Extension.create<SetupKitOptions>({
 
     if (this.options.details !== false)
       extensions.push(details.configure(this.options.details))
+
+    if (this.options.emoji !== false)
+      extensions.push(emoji.configure(this.options.emoji))
 
     return extensions
   },

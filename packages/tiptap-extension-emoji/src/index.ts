@@ -1,1 +1,1 @@
-export * from './lib/tiptap-extension-emoji'
+export * from './emoji'
