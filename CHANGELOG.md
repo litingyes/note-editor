@@ -1,3 +1,19 @@
+## 0.3.0 (2024-03-29)
+
+
+### 🚀 Features
+
+- **emoji:** init ([cb7bfa8](https://github.com/liting-yes/note-editor/commit/cb7bfa8))
+
+### 🩹 Fixes
+
+- **code-block-shiki:** type check error ([335afec](https://github.com/liting-yes/note-editor/commit/335afec))
+- **code-block-shiki:** decorations parse error ([3d36f20](https://github.com/liting-yes/note-editor/commit/3d36f20))
+
+### ❤️  Thank You
+
+- liting @liting-yes
+
 ## 0.2.1 (2024-03-27)
 
 
