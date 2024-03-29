@@ -31,5 +31,9 @@
   "dependencies": {
     "@tiptap/core": "^2.2.4",
     "emojilib": "^3.0.12"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   }
 }
