@@ -16,7 +16,7 @@ export const emoji = Node.create<EmojiOptions>({
   atom: true,
   addInputRules() {
     return Object.entries(emojiJson).map(([emoji, names]) => new InputRule({
-      find: new RegExp(`^:(${names.map(name => name.replace(/(\(|\)|\+)/, str => `\\${str}`)).join('|')}):$`),
+      find: new RegExp(`:(${names.map(name => name.replace(/(\(|\)|\+)/, str => `\\${str}`)).join('|')}):$`),
       handler({ state, range }) {
         state.tr.insertText(emoji, range.from, range.to)
       },
