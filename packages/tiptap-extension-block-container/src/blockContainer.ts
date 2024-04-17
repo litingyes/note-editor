@@ -11,7 +11,7 @@ export interface BlockContainerOptions {
 declare module '@tiptap/core' {
   interface Commands<ReturnType> {
     blockContainer: {
-      splitBlockContainer: (pos: number) => ReturnType
+      splitBlockContainer: () => ReturnType
     }
   }
 }
@@ -42,26 +42,30 @@ export const blockContainer = Node.create({
   },
   addCommands() {
     return {
-      splitBlockContainer: (pos: number) => ({ state: { schema, tr }, dispatch }) => {
-        const resolved = tr.doc.resolve(pos)
+      splitBlockContainer: () => ({ state: { selection, doc, schema, tr }, dispatch }) => {
+        if (!dispatch)
+          return false
+
+        const startPos = selection.from
+        const resolved = doc.resolve(startPos)
         const endPos = resolved.end(resolved.depth)
-        const newBlockContent = tr.doc.cut(pos, endPos)
+        const newBlockContent = tr.doc.cut(startPos, endPos)
         const newBlock = schema.nodes[this.name].createAndFill()!
 
-        if (dispatch) {
-          tr.insert(endPos + 1, newBlock)
-          tr.replace(endPos + 1, endPos + 2, newBlockContent.content.size > 0 ? new Slice(Fragment.from(newBlockContent), 0, 0) : undefined)
-          tr.setSelection(new TextSelection(tr.doc.resolve(endPos + 1)))
-          tr.delete(pos, endPos)
-        }
+        tr.replace(endPos + 1, endPos + 2, newBlockContent.content.size > 0 ? new Slice(Fragment.from(newBlockContent), 0, 0) : new Slice(Fragment.from(newBlock), 0, 0))
+        tr.setSelection(new TextSelection(tr.doc.resolve(endPos + 1)))
+        tr.delete(startPos, endPos)
 
-        return true
+        return dispatch(tr)
       },
     }
   },
   addKeyboardShortcuts() {
-    const handleEnter = () => this.editor.commands.first(({ commands, state }) => {
-      return [() => commands.newlineInCode(), () => commands.splitBlockContainer(state.selection.from)]
+    const handleEnter = () => this.editor.commands.first(({ commands }) => {
+      return [
+        () => commands.newlineInCode(),
+        () => commands.splitBlockContainer(),
+      ]
     })
 
     return {
