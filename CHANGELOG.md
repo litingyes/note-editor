@@ -1,6 +1,17 @@
 ## 0.3.1 (2024-04-20)
 
-This was a version bump only, there were no code changes.
+
+### 🚀 Features
+
+- **emoji:** remove ^ for input rules ([b4d8f7c](https://github.com/litingyes/note-editor/commit/b4d8f7c))
+
+### 🩹 Fixes
+
+- **block-container:** split error ([d000839](https://github.com/litingyes/note-editor/commit/d000839))
+
+### ❤️  Thank You
+
+- liting @litingyes
 
 ## 0.3.0 (2024-03-29)
 
