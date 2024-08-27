@@ -39,6 +39,7 @@ testem.log
 Thumbs.db
 
 .nx/cache
+.nx/workspace-data
 
 # vitepress docs
 docs/.vitepress/cache
