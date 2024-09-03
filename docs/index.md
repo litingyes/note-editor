@@ -6,6 +6,9 @@ hero:
   text: Tiptap-based text editor
   actions:
     - theme: brand
+      text: Best practice
+      link: https://github.com/vueditor/rich-text-editor.git
+    - theme: alt
       text: Guide
       link: /guide/vue
     - theme: alt

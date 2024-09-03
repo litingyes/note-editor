@@ -6,6 +6,9 @@ hero:
   text: 基于 Tiptap 的文本编辑器
   actions:
     - theme: brand
+      text: 最佳实践
+      link: https://github.com/vueditor/rich-text-editor.git
+    - theme: alt
       text: 指南
       link: /zh-CN/guide/vue
     - theme: alt
